@@ -140,14 +140,13 @@ dblclickBackGround.addEventListener('dblclick', (e) => {
 
 //*10*
 //keyUp
-
 //create input element and make it visible 
 const theInput = document.createElement('input');
-// theInput.textContent = 'Name:';
+
 theInput.style.display = 'inline';
-theInput.style.marginLeft = '470px';
+theInput.style.marginLeft = '780px';
 theInput.style.marginTop = '250px';
-theInput.style.position = 'sticky';
+// theInput.style.position = 'sticky';
 theInput.setAttribute('value', 'Enter Lower Case Letters');
 theInput.setAttribute('type', 'text');
 theInput.setAttribute('onkeyup', 'myFunction()');
