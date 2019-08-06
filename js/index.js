@@ -141,18 +141,29 @@ dblclickBackGround.addEventListener('dblclick', (e) => {
 //*10*
 //keyUp
 
-//create input element in HTML in the nav bar
+//create input element and make it visible 
 const theInput = document.createElement('input');
-theInput.textContent = 'Name:';
+// theInput.textContent = 'Name:';
 theInput.style.display = 'inline';
 theInput.style.marginLeft = '470px';
 theInput.style.marginTop = '250px';
+theInput.style.position = 'sticky';
+theInput.setAttribute('value', 'Enter Lower Case Letters');
 theInput.setAttribute('type', 'text');
 theInput.setAttribute('onkeyup', 'myFunction()');
 
+//new Var to append our input html to the page
 const append = document.querySelector('header');
 append.append(theInput);
-
+//transform the entered data to upperCase
 theInput.addEventListener('keydown', (e) => {
     e.target.style.textTransform = 'uppercase';
     }); 
+//remove 'Enter Lower Case here' text to experience toUpperCase
+theInput.addEventListener('mouseover', (e) => {
+    e.target.value = '';//blank string will display when mouseover fires
+});
+//put text back when mouseLeaves fires
+theInput.addEventListener('mouseleave', (e) => {
+    e.target.value = 'Enter Lower Case Letters';
+});
