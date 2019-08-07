@@ -137,7 +137,7 @@ console.log(ourButton)
 ourButton.forEach(clickAlert => {
     clickAlert.addEventListener('click', (event => {
         alert('Sorry, button under construction.');
-        event.stopPropagation();
+        // event.stopPropagation();
     }));
 });
 //////
@@ -186,8 +186,19 @@ theInput.addEventListener('mouseleave', (e) => {
 
 
 //Event Listener === Using preventDefault()
+const parentEl = document.querySelector('.destination:nth-child(1)');
+parentEl.addEventListener('click', (e) => {
+    console.log('Parent Slapping')
+});
 const btn3 = document.querySelector('.destination .btn:nth-child(3)');
 btn3.addEventListener('click', (e) => {
-    alert('Oops! preventDefault() enabled.');
+    console.log('slap div');
+    // alert('Oops! preventDefault() enabled.');
+    e.stopPropagation();
+});
+
+const aTag = document.querySelector('a');
+aTag.addEventListener('click', (e) => {
+    console.log('You clicked me.');
     e.preventDefault();
-})
+});
